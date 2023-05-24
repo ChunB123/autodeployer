@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.28.0 (c4137012e)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: scrum-app
+  name: scrum-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: scrum-app
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.28.0 (c4137012e)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/gen-yaml-default: "true"
+        io.kompose.service: scrum-app
+    spec:
+      containers:
+        - env:
+            - name: DB_SERVER
+              value: scrum-postgres
+            - name: POSTGRES_DB
+              value: scrum
+            - name: POSTGRES_PASSWORD
+              value: scrum
+            - name: POSTGRES_USER
+              value: scrum
+          image: public.ecr.aws/c2z1j4z9/chunb123:appnew
+          name: scrum-app
+          ports:
+            - containerPort: 8080
+          resources: {}
+      restartPolicy: Always
+status: {}

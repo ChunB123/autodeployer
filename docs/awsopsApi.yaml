@@ -1,0 +1,157 @@
+openapi: 3.0.3
+info:
+  title: AwsOps Microservice
+  description: |-
+    API for awsops microservice of Autodeployer project
+  version: "1"
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/anchitbhatia/AwsOps/1
+  - url: aswops-server-url/api/v1
+tags:
+  - name: provision
+    description: Everything about provisioning infrastructure
+paths:
+  /provision/{projectId}/jobs/{jobId}:              
+    get:
+      tags:
+        - provision
+      summary: Get provision status by JobId
+      description: Get provision status by JobId
+      parameters:
+      - name: "projectId"
+        in: "path"
+        description: "ID of the project of the job"
+        required: true
+        schema:
+          type: string
+      - name: "jobId"
+        in: "path"
+        description: "ID of the job to provision"
+        required: true
+        schema:
+          type: string
+      responses:
+        '200': 
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response' 
+        '404':
+          description: JobId not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'  
+    post:
+      tags:
+        - provision
+      summary: Provision a new job
+      description: Provision infrastructure for a new job
+      parameters:
+      - name: "projectId"
+        in: "path"
+        description: "ID of the project of the job"
+        required: true
+        schema:
+          type: string
+      - name: "jobId"
+        in: "path"
+        description: "ID of the job to provision"
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProvisionRequest'
+        required: true
+      responses:
+        '202': 
+          description: Provision request accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response' 
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+                
+        '404':
+          description: Bad provision request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        
+components:
+  schemas:
+    ProvisionRequest:
+      type: object
+      properties:
+        region:
+          type: string
+          description: Region name
+          example: "us-west-2"
+        credentials:
+          type: object
+          description: Credential details
+          example: "{\"accesskey\":\"key\",\"password\":\"pwd\",\"token\":\"token\"}"
+        network:
+          type: object
+          description: Network details
+          example: "{\"name\":\"network_name\",\"cidr\":\"cidr\",\"availabilityZones\":[],\"privateSubnet\":[],\"publicSubnet\":[]}"
+        cluster:
+          type: object
+          description: Cluster details
+          example: "{\"name\":\"cluster_name\",\"desiredState\":\"desired state\"}"
+    Response:
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          type: string
+          enum:
+            - success
+            - failed
+            - inprogress
+            - accepted
+        message:
+          type: string
+    BadRequestResponse:
+      type: object
+      required: 
+        - statusCode
+        - message
+        - error
+      properties:
+        statusCode:
+          type: integer
+          description: "400 status code"
+        message:
+          type: array
+          description: "List of error messages"
+          items:
+            type: string
+        error:
+          type: string
+    ErrorResponse:
+      type: object
+      required:
+        - error
+      properties:
+        errorCode:
+          type: integer
+          enum:
+            - 1
+          description: |
+            1: Job not found
+        message:
+          type: string

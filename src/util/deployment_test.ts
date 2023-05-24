@@ -1,0 +1,3 @@
+import {deploy} from "./shell_methods"
+
+// await deploy("ASIARSTZDNBI5JVPR3KK", "axS+Z5sUQg7i+lPT/U4JrqqNZstoveEo3J5rw0jH", "FwoGZXIvYXdzEL3//////////wEaDGx1hvnEj8m4AExpACK4ARAE8IVzqtA91O1J+JxZIjhxIW5auccAtd7tRnDi0N8c26bKrUEv487XiUj+ntpowuQGtj0iQ5Ie3UEHYSPQdWqs12q8sfmv6jXtBBsWUN1qekqzJBED9B+IRf2UeVPmBXQsTNl8+1mLcGMH4qKEAgulWQmTTyaq+iagsTHDkXyZ0tmvxAZHfYqnJeMZ316nvwlqKzmwWA1xkT63uuyHwLwVS18WFgxkVooLUyfgaTkGe2NzM51F2Dwo9ozCogYyLTaed+aySJPQHVWE//ajA0dA0G92+jwULV5BGXD2EVL0P041sBVdt8SLa04kng==", "us-east-1", "test", "blah", "./data/demo/");

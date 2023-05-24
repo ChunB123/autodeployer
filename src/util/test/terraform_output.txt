@@ -1,0 +1,14 @@
+Apply complete! Resources: 49 added, 0 changed, 0 destroyed.
+     
+     Outputs:
+     
+eks_test cluster_endpoint = “https://FD5D6F1FF58237297889217BCB3CD15A.sk1.us-east-2.eks.amazonaws.com”
+     create_user_arn = “arn:aws:iam::476850219112:user/terraformTester”
+     ebsVolume_availabilityZone = “us-east-2a”
+     ebsVolume_id = “vol-077de2c6c9623e5f1"
+ eks_test
+ cluster_endpoint =
+ https://FD5D6F1FF58237297889217BCB3CD15A.sk1.us-east-2.eks.amazonaws.com
+ create_user_arn = arn:aws:iam::476850219112:user/terraformTester
+ ebsVolume_availabilityZone = us-east-2a
+ ebsVolume_id = vol-077de2c6c9623e5f1

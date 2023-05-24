@@ -1,0 +1,10 @@
+aws_s3_bucket.example: Creating...
+aws_s3_bucket.example: Still creating... [10s elapsed]
+aws_s3_bucket.example: Still creating... [20s elapsed]
+aws_s3_bucket.example: Creation complete after 30s [id=mybucket]
+
+Error: Error creating S3 bucket: AccessDenied: Access Denied
+        status code: 403, request id: ABC123DEF456GHI789
+
+  on main.tf line 3, in resource "aws_s3_bucket" "example":
+   3: resource "aws_s3_bucket" "example" {

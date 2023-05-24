@@ -1,11 +1,34 @@
+<<<<<<< HEAD
+=======
+# compiled output
+/dist
+/node_modules
+*.d.ts
+*.js
+node_modules
+cdktf.out
+cdktf.log
+*terraform.*.tfstate*
+.gen
+.terraform
+tsconfig.tsbuildinfo
+!jest.config.js
+!setup.js
+
+>>>>>>> fd0db56 (Created base app)
 # Logs
 logs
 *.log
 npm-debug.log*
+<<<<<<< HEAD
+=======
+pnpm-debug.log*
+>>>>>>> fd0db56 (Created base app)
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+<<<<<<< HEAD
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
@@ -102,3 +125,29 @@ dist
 
 # TernJS port file
 .tern-port
+=======
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+>>>>>>> fd0db56 (Created base app)
+data/eks_gen.ts
+data/

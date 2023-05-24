@@ -1,0 +1,6 @@
+NAME             TYPE           CLUSTER-IP       EXTERNAL-IP                                                              PORT(S)          AGE
+kubernetes       ClusterIP      172.20.0.1       <none>                                                                   443/TCP          81m
+scrum-app        ClusterIP      172.20.72.130    <none>                                                                   8080/TCP         79s
+scrum-postgres   ClusterIP      172.20.245.47    <none>                                                                   5432/TCP         62s
+scrum-ui-tcp     LoadBalancer   172.20.32.62     a218dd7151eae4f3080f6a14f4c2c530-677186731.us-east-2.elb.amazonaws.com   4200:31225/TCP   53s
+scrum-ui2-tcp    LoadBalancer   172.20.222.139   adee6de8b02604ae0b9743449151178d-252527843.us-east-2.elb.amazonaws.com   4201:32521/TCP   44s

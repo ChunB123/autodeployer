@@ -1,0 +1,31 @@
+{
+  "cluster": {
+    "desiredSize": 3,
+    "name": "my-eks"
+  },
+  "network": {
+    "availabilityZones": [
+      "us-east-2a",
+      "us-east-2b",
+      "us-east-2c"
+    ],
+    "cidr": "10.0.0.0/16",
+    "name": "my-vpc",
+    "privateSubnets": [
+      "10.0.1.0/24",
+      "10.0.2.0/24",
+      "10.0.3.0/24"
+    ],
+    "publicSubnets": [
+      "10.0.4.0/24",
+      "10.0.5.0/24",
+      "10.0.6.0/24"
+    ]
+  },
+  "region": "us-east-2",
+  "volumes": {
+    "volumesList": [
+      "scrum-board"
+    ]
+  }
+}
