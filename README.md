@@ -1,7 +1,9 @@
 
 ## Description
 
-AwsOps microservice for autodeployer
+AwsOps microservice for Autodeployer.
+
+Query the parameters (defined in the Docker Compose file) using the jobId from other microservices, then provision an EKS cluster or deploy the user's application there.
 
 ## API documentation
 
